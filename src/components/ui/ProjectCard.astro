@@ -1,0 +1,120 @@
+---
+import Badge from "./Badge.astro";
+import PlaceholderFrame from "./PlaceholderFrame.astro";
+import type { Proyecto } from "../../types/content";
+
+interface Props {
+  proyecto: Proyecto;
+  index: number;
+}
+
+const { proyecto, index } = Astro.props;
+const posicion = proyecto.imagenPosicion ?? (index % 2 === 0 ? "derecha" : "izquierda");
+const lineas = Array.isArray(proyecto.titulo) ? proyecto.titulo : [proyecto.titulo];
+---
+
+<article class:list={["project-card", `project-card--${posicion}`]} data-reveal>
+  <div class="project-card__text">
+    <div class="project-card__meta">
+      <span>{proyecto.numero}</span><span class="project-card__meta-line"></span><span>{proyecto.categoria}</span>
+    </div>
+    <h3 class:list={["project-card__title", { "project-card__title--tight": lineas.length > 1 }]}>
+      {lineas.map((linea, i) => (
+        <>
+          {linea}
+          {i < lineas.length - 1 && <br />}
+        </>
+      ))}
+    </h3>
+    <p class="project-card__desc">{proyecto.descripcion}</p>
+    <div class="project-card__tags">
+      {proyecto.tags.map((tag) => <Badge>{tag}</Badge>)}
+    </div>
+    <a data-magnet href={proyecto.link} target="_blank" rel="noopener" class="project-card__link">
+      {proyecto.linkTexto} <span>↗</span>
+    </a>
+  </div>
+  <div class="project-card__media">
+    <PlaceholderFrame aspectRatio="16/11" alt={proyecto.imagenAlt} tilt />
+  </div>
+</article>
+
+<style>
+  .project-card {
+    opacity: 0;
+    transform: translateY(28px);
+    padding: 74px 0;
+    border-bottom: 1px solid rgba(var(--fg-rgb), 0.12);
+    display: grid;
+    gap: 60px;
+    align-items: center;
+  }
+  .project-card--derecha {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  }
+  .project-card--izquierda {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  }
+  .project-card--izquierda .project-card__media {
+    order: -1;
+  }
+
+  .project-card__meta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(var(--fg-rgb), 0.42);
+  }
+  .project-card__meta-line {
+    flex: 1;
+    height: 1px;
+    background: rgba(var(--fg-rgb), 0.16);
+  }
+
+  .project-card__title {
+    margin: 16px 0 0;
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: clamp(46px, 6.6vw, 104px);
+    line-height: 0.92;
+    letter-spacing: -0.025em;
+  }
+  .project-card__title--tight {
+    font-size: clamp(40px, 5.4vw, 86px);
+    line-height: 0.94;
+  }
+
+  .project-card__desc {
+    margin: 20px 0 0;
+    max-width: 44ch;
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: rgba(var(--fg-rgb), 0.64);
+    text-wrap: pretty;
+  }
+
+  .project-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 24px;
+  }
+
+  .project-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    border-bottom: 1px solid rgba(var(--fg-rgb), 0.3);
+    padding-bottom: 6px;
+  }
+</style>

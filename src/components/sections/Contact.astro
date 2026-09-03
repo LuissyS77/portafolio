@@ -1,0 +1,72 @@
+---
+import ButtonPill from "../ui/ButtonPill.astro";
+import { site } from "../../data/site";
+---
+
+<section id="contacto" class="contact">
+  <div class="contact__inner">
+    <div class="contact__label">06 — Contacto</div>
+    <a data-magnet href={`mailto:${site.email}`} class="contact__email">{site.email}</a>
+    <div class="contact__actions">
+      <ButtonPill href={site.github} variant="social" external>GitHub ↗</ButtonPill>
+      <ButtonPill href={site.linkedin} variant="social" external>LinkedIn ↗</ButtonPill>
+      <ButtonPill href={site.cvHref} variant="social">Descargar CV ↓</ButtonPill>
+    </div>
+    <div class="contact__footer">
+      <span>© {site.anioCopyright} {site.nombreCompleto}</span>
+      <span>{site.ubicacionFooter}</span>
+      <span>Hecho con cuidado</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact {
+    border-top: 1px solid rgba(var(--fg-rgb), 0.14);
+    padding: 110px 30px 40px;
+  }
+  .contact__inner {
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+  .contact__label {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(var(--fg-rgb), 0.4);
+  }
+  .contact__email {
+    display: block;
+    margin: 26px 0 0;
+    font-family: var(--font-serif);
+    font-size: clamp(30px, 7vw, 118px);
+    line-height: 0.94;
+    letter-spacing: -0.03em;
+    transition: opacity 0.3s;
+  }
+  .contact__email:hover {
+    opacity: 0.6;
+    color: var(--fg);
+  }
+  .contact__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 44px;
+  }
+  .contact__footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 90px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(var(--fg-rgb), 0.1);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(var(--fg-rgb), 0.38);
+  }
+</style>

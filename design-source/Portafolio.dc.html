@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#0c0c0b;color:#e8e4da;font-family:"Space Grotesk",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+::selection{background:#e8e4da;color:#0c0c0b}
+a{color:#e8e4da;text-decoration:none;transition:color .25s}
+a:hover{color:#a89f8d}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+@keyframes scrollcue{0%{transform:translateY(-100%)}100%{transform:translateY(100%)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes caret{0%,100%{opacity:1}50%{opacity:0}}
+@keyframes drift{0%{transform:translate3d(-6%,-4%,0) scale(1)}50%{transform:translate3d(6%,5%,0) scale(1.18)}100%{transform:translate3d(-6%,-4%,0) scale(1)}}
+@keyframes drift2{0%{transform:translate3d(5%,6%,0) scale(1.1)}50%{transform:translate3d(-7%,-5%,0) scale(.92)}100%{transform:translate3d(5%,6%,0) scale(1.1)}}
+@keyframes gridpan{from{background-position:0 0}to{background-position:64px 64px}}
+@keyframes twinkle{0%,100%{opacity:.15}50%{opacity:.7}}
+</style>
+</helmet>
+<template id="__bundler_thumbnail" data-bg-color="#0c0c0b"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect width="1200" height="800" fill="#0c0c0b"/><circle cx="600" cy="360" r="250" fill="#1a1a17"/><text x="600" y="410" font-family="Georgia,serif" font-size="200" fill="#e8e4da" text-anchor="middle">LA</text><rect x="430" y="560" width="340" height="3" fill="#a89f8d"/><text x="600" y="620" font-family="monospace" font-size="34" letter-spacing="8" fill="#a89f8d" text-anchor="middle">PORTAFOLIO</text></svg></template>
+<div ref="{{ rootRef }}" style="position:relative;overflow-x:clip;background:#0c0c0b">
+
+<div style="position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.045;background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAiIGhlaWdodD0iMTQwIj48ZmlsdGVyIGlkPSJuIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iMC44IiBudW1PY3RhdmVzPSIyIi8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9IjE0MCIgaGVpZ2h0PSIxNDAiIGZpbHRlcj0idXJsKCNuKSIvPjwvc3ZnPg==')"></div>
+<div data-cursor style="position:fixed;top:0;left:0;width:38px;height:38px;margin:-19px 0 0 -19px;border-radius:50%;border:1px solid rgba(232,228,218,.55);z-index:70;pointer-events:none;opacity:0;transition:width .25s,height .25s,margin .25s,opacity .3s,background .25s"></div>
+<div data-progress style="position:fixed;top:0;left:0;height:2px;width:0;background:#e8e4da;z-index:65"></div>
+
+<nav style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:16px 30px;backdrop-filter:blur(16px);background:rgba(12,12,11,.6);border-bottom:1px solid rgba(232,228,218,.08);font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase">
+  <a href="#top" style="display:flex;align-items:center;gap:9px"><span style="width:8px;height:8px;border-radius:50%;background:#e8e4da;animation:blink 2.6s infinite"></span>Luissy Angulo</a>
+  <div style="display:flex;gap:24px;white-space:nowrap">
+    <a href="#sobre">Sobre mí</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#stack">Stack</a>
+    <a href="#experiencia">Experiencia</a>
+    <a href="#contacto" style="color:#a89f8d">Contacto</a>
+  </div>
+</nav>
+
+<header id="top" data-screen-label="Hero" style="min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;align-items:stretch;padding:88px 30px 24px;position:relative;isolation:isolate;overflow:hidden">
+  <div aria-hidden="true" style="position:absolute;inset:0;z-index:-3;background-image:linear-gradient(rgba(232,228,218,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(232,228,218,.055) 1px,transparent 1px);background-size:64px 64px;animation:gridpan 22s linear infinite;-webkit-mask-image:radial-gradient(ellipse 78% 62% at 50% 46%,#000 0%,transparent 78%);mask-image:radial-gradient(ellipse 78% 62% at 50% 46%,#000 0%,transparent 78%)"></div>
+  <div aria-hidden="true" style="position:absolute;top:-18%;left:14%;width:62vw;height:62vw;max-width:900px;max-height:900px;z-index:-2;border-radius:50%;background:radial-gradient(circle,rgba(232,228,218,.16) 0%,rgba(232,228,218,.05) 42%,transparent 68%);filter:blur(52px);animation:drift 26s ease-in-out infinite"></div>
+  <div aria-hidden="true" style="position:absolute;bottom:-22%;right:8%;width:52vw;height:52vw;max-width:760px;max-height:760px;z-index:-2;border-radius:50%;background:radial-gradient(circle,rgba(168,159,141,.20) 0%,rgba(168,159,141,.06) 45%,transparent 70%);filter:blur(64px);animation:drift2 32s ease-in-out infinite"></div>
+  <div data-stars aria-hidden="true" style="position:absolute;inset:0;z-index:-2;pointer-events:none"></div>
+  <div aria-hidden="true" style="position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse 70% 55% at 50% 50%,transparent 30%,rgba(12,12,11,.55) 78%,#0c0c0b 100%)"></div>
+  <div style="display:flex;justify-content:space-between;gap:24px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(232,228,218,.45);padding-top:18px">
+    <span>Portafolio 2026</span>
+    <span>Medellín, CO · {{ clock }}</span>
+    <span style="text-align:right">Dev web &amp; móvil</span>
+  </div>
+
+  <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:30px;padding:20px 0">
+    <div data-reveal style="display:inline-flex;align-items:center;gap:10px;padding:9px 18px;border:1px solid rgba(232,228,218,.18);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(232,228,218,.72);opacity:0;transform:translateY(14px)">
+      <span style="width:8px;height:8px;border-radius:50%;background:#7fdc8a;animation:blink 2.6s infinite"></span>Abierto a oportunidades
+    </div>
+    <div>
+      <div data-reveal style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(232,228,218,.45);margin-bottom:18px;opacity:0;transform:translateY(14px)">Hola, soy</div>
+      <h1 style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(66px,12vw,178px);line-height:1.0;letter-spacing:-.035em">
+        <span style="display:block;overflow:hidden;padding-bottom:.2em;margin-bottom:-.2em"><span data-rise style="display:block;transform:translateY(125%)">Luissy</span></span>
+        <span style="display:block;overflow:hidden;padding-bottom:.2em;margin-bottom:-.2em"><span data-rise style="display:block;transform:translateY(125%)"><em style="font-style:italic;color:#a89f8d">Angulo</em></span></span>
+      </h1>
+    </div>
+    <div data-reveal style="display:inline-flex;align-items:center;gap:12px;font-family:'JetBrains Mono',monospace;font-size:clamp(13px,1.4vw,17px);letter-spacing:.08em;color:rgba(232,228,218,.72);border:1px solid rgba(232,228,218,.16);border-radius:100px;padding:12px 24px;min-height:46px;opacity:0;transform:translateY(14px)">
+      <span style="color:rgba(232,228,218,.4)">&gt;</span><span>{{ rotating }}</span><span style="width:9px;height:18px;background:#e8e4da;animation:caret 1s steps(1) infinite"></span>
+    </div>
+    <div data-reveal style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:6px;opacity:0;transform:translateY(14px)">
+      <a data-magnet href="#proyectos" style="display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:100px;background:#e8e4da;color:#0c0c0b;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;transition:transform .3s" style-hover="transform:translateY(-3px)">Ver proyectos <span>→</span></a>
+      <a data-magnet href="#contacto" style="display:inline-flex;align-items:center;padding:14px 22px;border-radius:100px;border:1px solid rgba(232,228,218,.25);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;transition:transform .3s,border-color .3s" style-hover="transform:translateY(-3px);border-color:rgba(232,228,218,.6)">Contacto</a>
+    </div>
+  </div>
+
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-top:20px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(232,228,218,.4)">
+    <span style="display:flex;align-items:center;gap:12px"><span style="display:block;width:1px;height:44px;overflow:hidden;background:rgba(232,228,218,.15);position:relative"><span style="position:absolute;inset:0;background:#e8e4da;animation:scrollcue 2s cubic-bezier(.7,0,.3,1) infinite"></span></span>Desplázate</span>
+    <span>01 — 06</span>
+  </div>
+</header>
+
+<div style="border-top:1px solid rgba(232,228,218,.1);border-bottom:1px solid rgba(232,228,218,.1);padding:16px 0;overflow:hidden;white-space:nowrap">
+  <div style="display:inline-flex;gap:36px;animation:marq 28s linear infinite;font-family:'Instrument Serif',serif;font-size:34px;color:rgba(232,228,218,.28)">
+    <span>Vue 3</span><span>·</span><span>React</span><span>·</span><span>Expo</span><span>·</span><span>TypeScript</span><span>·</span><span>Node</span><span>·</span><span>PHP</span><span>·</span><span>MySQL</span><span>·</span><span>Docker</span><span>·</span>
+    <span>Vue 3</span><span>·</span><span>React</span><span>·</span><span>Expo</span><span>·</span><span>TypeScript</span><span>·</span><span>Node</span><span>·</span><span>PHP</span><span>·</span><span>MySQL</span><span>·</span><span>Docker</span><span>·</span>
+  </div>
+</div>
+
+<section id="sobre" data-screen-label="Sobre mí" style="padding:130px 30px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:70px;align-items:start;max-width:1500px;margin:0 auto">
+  <div data-reveal style="opacity:0;transform:translateY(24px);position:sticky;top:110px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(232,228,218,.4);margin-bottom:22px">02 — Sobre mí</div>
+    <div style="aspect-ratio:4/5;border:1px solid rgba(232,228,218,.14);display:flex;align-items:flex-end;padding:16px;background-image:repeating-linear-gradient(115deg,rgba(232,228,218,.07) 0 1px,transparent 1px 9px)">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(232,228,218,.45)">[ foto de retrato ]</span>
+    </div>
+  </div>
+  <div>
+    <p data-reveal style="margin:0 0 26px;font-size:16px;line-height:1.6;color:rgba(232,228,218,.66);text-wrap:pretty;opacity:0;transform:translateY(24px)">Técnico en desarrollo de software del SENA. Construí <strong style="font-weight:500;color:#e8e4da">Conv3rTech</strong> en equipo —web y móvil— y hoy hago prácticas en <strong style="font-weight:500;color:#e8e4da">Portada Inmobiliaria</strong>, donde acumulo 6 meses de experiencia en producto real. Cada vez integro más <strong style="font-weight:500;color:#e8e4da">IA</strong> en mi forma de trabajar.</p>
+    <p data-reveal style="margin:0 0 34px;font-family:'Instrument Serif',serif;font-size:clamp(30px,3.6vw,54px);line-height:1.16;letter-spacing:-.015em;text-wrap:pretty;opacity:0;transform:translateY(24px)">Vengo del SENA, aprendí construyendo en equipo y me quedé con una obsesión: que lo que se entrega <em style="color:#a89f8d">se sienta terminado</em>.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:34px;border-top:1px solid rgba(232,228,218,.12);padding-top:30px">
+      <p data-reveal style="margin:0;font-size:15px;line-height:1.6;color:rgba(232,228,218,.62);text-wrap:pretty;opacity:0;transform:translateY(24px)">En Portada Inmobiliaria toco código que usan personas todos los días: listados, filtros y formularios donde cada detalle de rendimiento se nota.</p>
+      <p data-reveal style="margin:0;font-size:15px;line-height:1.6;color:rgba(232,228,218,.62);text-wrap:pretty;opacity:0;transform:translateY(24px)">Trabajo en el cruce entre front-end y producto: paso de un flujo en Figma a componentes reales, con estados de carga, error y vacío pensados desde el principio.</p>
+      <p data-reveal style="margin:0;font-size:15px;line-height:1.6;color:rgba(232,228,218,.62);text-wrap:pretty;opacity:0;transform:translateY(24px)">También he ido incorporando la IA a mi día a día —como copiloto para explorar soluciones, revisar código y acelerar iteraciones— sin dejar de entender lo que entrego.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:44px;margin-top:56px;border-top:1px solid rgba(232,228,218,.12);padding-top:26px">
+      <div data-reveal style="opacity:0;transform:translateY(24px)"><div style="font-family:'Instrument Serif',serif;font-size:56px;line-height:1">6</div><div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(232,228,218,.42)">meses en producto</div></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px)"><div style="font-family:'Instrument Serif',serif;font-size:56px;line-height:1">2</div><div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(232,228,218,.42)">plataformas: web + móvil</div></div>
+      <div data-reveal style="opacity:0;transform:translateY(24px)"><div style="font-family:'Instrument Serif',serif;font-size:56px;line-height:1">∞</div><div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(232,228,218,.42)">ganas de aprender</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="proyectos" data-screen-label="Proyectos" style="padding:20px 30px 60px;max-width:1500px;margin:0 auto">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(232,228,218,.14);padding-bottom:18px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(232,228,218,.4)">
+    <span>03 — Proyectos</span><span>Seleccionados</span>
+  </div>
+
+  <article data-reveal style="opacity:0;transform:translateY(28px);padding:74px 0;border-bottom:1px solid rgba(232,228,218,.12);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:60px;align-items:center">
+    <div>
+      <div style="display:flex;align-items:center;gap:14px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(232,228,218,.42)"><span>01</span><span style="flex:1;height:1px;background:rgba(232,228,218,.16)"></span><span>SENA · Equipo</span></div>
+      <h3 style="margin:16px 0 0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(46px,6.6vw,104px);line-height:.92;letter-spacing:-.025em">Conv3rTech</h3>
+      <p style="margin:20px 0 0;max-width:44ch;font-size:15.5px;line-height:1.6;color:rgba(232,228,218,.64);text-wrap:pretty">Plataforma para la gestión de servicios tecnológicos, construida en equipo durante la formación en el SENA. Web en React 19 + Vite con agendamiento (FullCalendar), exportación a PDF y Excel y carga de imágenes en Cloudinary; API en Node/Express con Sequelize y MySQL, autenticación JWT y correos transaccionales. La app móvil en Expo consume la misma API.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:24px">
+        <span style="padding:7px 13px;border:1px solid rgba(232,228,218,.2);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;color:rgba(232,228,218,.7)">React 19</span>
+        <span style="padding:7px 13px;border:1px solid rgba(232,228,218,.2);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;color:rgba(232,228,218,.7)">Expo</span>
+        <span style="padding:7px 13px;border:1px solid rgba(232,228,218,.2);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;color:rgba(232,228,218,.7)">Node + Express</span>
+        <span style="padding:7px 13px;border:1px solid rgba(232,228,218,.2);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;color:rgba(232,228,218,.7)">MySQL</span>
+        <span style="padding:7px 13px;border:1px solid rgba(232,228,218,.2);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;color:rgba(232,228,218,.7)">Equipo</span>
+        <span style="padding:7px 13px;border:1px solid rgba(232,228,218,.2);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;color:rgba(232,228,218,.7)">2025</span>
+      </div>
+      <a data-magnet href="https://github.com/LuissyS77/Conv3rTech_mobile" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;margin-top:30px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;border-bottom:1px solid rgba(232,228,218,.3);padding-bottom:6px">Ver repositorio <span>↗</span></a>
+    </div>
+    <div data-tilt style="aspect-ratio:16/11;border:1px solid rgba(232,228,218,.14);display:flex;align-items:flex-end;padding:18px;transition:transform .4s cubic-bezier(.2,.7,.2,1);background-image:repeating-linear-gradient(115deg,rgba(232,228,218,.07) 0 1px,transparent 1px 9px)">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(232,228,218,.45)">[ captura de Conv3rTech — web + app ]</span>
+    </div>
+  </article>
+
+  <article data-reveal style="opacity:0;transform:translateY(28px);padding:74px 0;border-bottom:1px solid rgba(232,228,218,.12);display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:60px;align-items:center">
+    <div data-tilt style="order:0;aspect-ratio:16/11;border:1px solid rgba(232,228,218,.14);display:flex;align-items:flex-end;padding:18px;transition:transform .4s cubic-bezier(.2,.7,.2,1);background-image:repeating-linear-gradient(115deg,rgba(232,228,218,.07) 0 1px,transparent 1px 9px)">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(232,228,218,.45)">[ captura de Portada Inmobiliaria ]</span>
+    </div>
+    <div>
+      <div style="display:flex;align-items:center;gap:14px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(232,228,218,.42)"><span>02</span><span style="flex:1;height:1px;background:rgba(232,228,218,.16)"></span><span>Prácticas · Actual</span></div>
+      <h3 style="margin:16px 0 0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(40px,5.4vw,86px);line-height:.94;letter-spacing:-.025em" aria-label="Portada Inmobiliaria">Portada&nbsp;<br>Inmobiliaria</h3>
+      <p style="margin:20px 0 0;max-width:44ch;font-size:15.5px;line-height:1.6;color:rgba(232,228,218,.64);text-wrap:pretty">Portal inmobiliario en producción. Trabajo sobre el front en Vue 3 + Vite con Bootstrap 5 y Vue Router: vistas y buscador de propiedades, paginación y autocompletado, consumiendo la API en PHP. Equipo con commits convencionales, pruebas en Vitest y despliegues a producción.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:24px">
+        <span style="padding:7px 13px;border:1px solid rgba(232,228,218,.2);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;color:rgba(232,228,218,.7)">Vue 3</span>
+        <span style="padding:7px 13px;border:1px solid rgba(232,228,218,.2);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;color:rgba(232,228,218,.7)">Bootstrap 5</span>
+        <span style="padding:7px 13px;border:1px solid rgba(232,228,218,.2);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;color:rgba(232,228,218,.7)">PHP API</span>
+        <span style="padding:7px 13px;border:1px solid rgba(232,228,218,.2);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;color:rgba(232,228,218,.7)">Vitest</span>
+        <span style="padding:7px 13px;border:1px solid rgba(232,228,218,.2);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;color:rgba(232,228,218,.7)">6 meses</span>
+        <span style="padding:7px 13px;border:1px solid rgba(232,228,218,.2);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;color:rgba(232,228,218,.7)">2026</span>
+      </div>
+      <a data-magnet href="https://github.com/PORTADA-INMOBILIARIA-SAS" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;margin-top:30px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;border-bottom:1px solid rgba(232,228,218,.3);padding-bottom:6px">Ver organización <span>↗</span></a>
+    </div>
+  </article>
+</section>
+
+<section id="stack" data-screen-label="Stack" style="padding:90px 30px 120px;max-width:1500px;margin:0 auto">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(232,228,218,.14);padding-bottom:18px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(232,228,218,.4);margin-bottom:44px">
+    <span>04 — Stack</span><span>Herramientas del día a día</span>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:44px">
+    <div data-reveal style="opacity:0;transform:translateY(22px)">
+      <div style="font-family:'Instrument Serif',serif;font-size:26px;margin-bottom:14px">Front-end</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <span style="padding:9px 14px;background:rgba(232,228,218,.06);border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:11.5px;white-space:nowrap;color:rgba(232,228,218,.8)">React</span>
+        <span style="padding:9px 14px;background:rgba(232,228,218,.06);border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:11.5px;white-space:nowrap;color:rgba(232,228,218,.8)">React Native / Expo</span>
+        <span style="padding:9px 14px;background:rgba(232,228,218,.06);border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:11.5px;white-space:nowrap;color:rgba(232,228,218,.8)">TypeScript</span>
+        <span style="padding:9px 14px;background:rgba(232,228,218,.06);border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:11.5px;white-space:nowrap;color:rgba(232,228,218,.8)">Tailwind</span>
+        <span style="padding:9px 14px;background:rgba(232,228,218,.06);border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:11.5px;white-space:nowrap;color:rgba(232,228,218,.8)">Vue 3</span>
+        <span style="padding:9px 14px;background:rgba(232,228,218,.06);border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:11.5px;white-space:nowrap;color:rgba(232,228,218,.8)">Bootstrap</span>
+      </div>
+    </div>
+    <div data-reveal style="opacity:0;transform:translateY(22px)">
+      <div style="font-family:'Instrument Serif',serif;font-size:26px;margin-bottom:14px">Back-end &amp; datos</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <span style="padding:9px 14px;background:rgba(232,228,218,.06);border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:11.5px;white-space:nowrap;color:rgba(232,228,218,.8)">Node</span>
+        <span style="padding:9px 14px;background:rgba(232,228,218,.06);border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:11.5px;white-space:nowrap;color:rgba(232,228,218,.8)">Express</span>
+        <span style="padding:9px 14px;background:rgba(232,228,218,.06);border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:11.5px;white-space:nowrap;color:rgba(232,228,218,.8)">MySQL</span>
+        <span style="padding:9px 14px;background:rgba(232,228,218,.06);border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:11.5px;white-space:nowrap;color:rgba(232,228,218,.8)">Sequelize</span>
+        <span style="padding:9px 14px;background:rgba(232,228,218,.06);border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:11.5px;white-space:nowrap;color:rgba(232,228,218,.8)">REST APIs</span>
+        <span style="padding:9px 14px;background:rgba(232,228,218,.06);border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:11.5px;white-space:nowrap;color:rgba(232,228,218,.8)">PHP</span>
+      </div>
+    </div>
+    <div data-reveal style="opacity:0;transform:translateY(22px)">
+      <div style="font-family:'Instrument Serif',serif;font-size:26px;margin-bottom:14px">IA en el flujo</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <span style="padding:9px 14px;background:rgba(232,228,218,.06);border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:11.5px;white-space:nowrap;color:rgba(232,228,218,.8)">Claude</span>
+        <span style="padding:9px 14px;background:rgba(232,228,218,.06);border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:11.5px;white-space:nowrap;color:rgba(232,228,218,.8)">GitHub Copilot</span>
+        <span style="padding:9px 14px;background:rgba(232,228,218,.06);border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:11.5px;white-space:nowrap;color:rgba(232,228,218,.8)">Prompting</span>
+        <span style="padding:9px 14px;background:rgba(232,228,218,.06);border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:11.5px;white-space:nowrap;color:rgba(232,228,218,.8)">APIs de IA</span>
+      </div>
+    </div>
+    <div data-reveal style="opacity:0;transform:translateY(22px)">
+      <div style="font-family:'Instrument Serif',serif;font-size:26px;margin-bottom:14px">Proceso</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <span style="padding:9px 14px;background:rgba(232,228,218,.06);border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:11.5px;white-space:nowrap;color:rgba(232,228,218,.8)">Git / GitHub</span>
+        <span style="padding:9px 14px;background:rgba(232,228,218,.06);border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:11.5px;white-space:nowrap;color:rgba(232,228,218,.8)">Vite</span>
+        <span style="padding:9px 14px;background:rgba(232,228,218,.06);border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:11.5px;white-space:nowrap;color:rgba(232,228,218,.8)">Figma</span>
+        <span style="padding:9px 14px;background:rgba(232,228,218,.06);border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:11.5px;white-space:nowrap;color:rgba(232,228,218,.8)">Scrum</span>
+        <span style="padding:9px 14px;background:rgba(232,228,218,.06);border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:11.5px;white-space:nowrap;color:rgba(232,228,218,.8)">Code review</span>
+        <span style="padding:9px 14px;background:rgba(232,228,218,.06);border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:11.5px;white-space:nowrap;color:rgba(232,228,218,.8)">Astro</span>
+        <span style="padding:9px 14px;background:rgba(232,228,218,.06);border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:11.5px;white-space:nowrap;color:rgba(232,228,218,.8)">Docker</span>
+        <span style="padding:9px 14px;background:rgba(232,228,218,.06);border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:11.5px;white-space:nowrap;color:rgba(232,228,218,.8)">Despliegues</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experiencia" data-screen-label="Experiencia" style="padding:0 30px 130px;max-width:1500px;margin:0 auto">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(232,228,218,.14);padding-bottom:18px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(232,228,218,.4)">
+    <span>05 — Experiencia</span><span>Formación &amp; trabajo</span>
+  </div>
+  <div data-reveal style="opacity:0;transform:translateY(22px);display:grid;grid-template-columns:150px minmax(0,1fr) minmax(0,1fr);gap:34px;align-items:start;padding:34px 0;border-bottom:1px solid rgba(232,228,218,.1)">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;color:rgba(232,228,218,.45)">2026 — Hoy</div>
+    <div style="font-family:'Instrument Serif',serif;font-size:34px;line-height:1.05">Practicante de desarrollo<br><span style="color:#a89f8d">Portada Inmobiliaria</span></div>
+    <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(232,228,218,.6);text-wrap:pretty">Desarrollo de vistas y componentes en Vue 3, ajustes sobre la API en PHP, corrección de incidencias y participación en revisiones de código y despliegues.</p>
+  </div>
+  <div data-reveal style="opacity:0;transform:translateY(22px);display:grid;grid-template-columns:150px minmax(0,1fr) minmax(0,1fr);gap:34px;align-items:start;padding:34px 0;border-bottom:1px solid rgba(232,228,218,.1)">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;color:rgba(232,228,218,.45)">2025</div>
+    <div style="font-family:'Instrument Serif',serif;font-size:34px;line-height:1.05">Proyecto formativo<br><span style="color:#a89f8d">Conv3rTech · SENA</span></div>
+    <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(232,228,218,.6);text-wrap:pretty">Construcción en equipo de Conv3rTech: front en React, API en Node/Express con MySQL y app móvil en Expo, desde los requisitos hasta la sustentación.</p>
+  </div>
+  <div data-reveal style="opacity:0;transform:translateY(22px);display:grid;grid-template-columns:150px minmax(0,1fr) minmax(0,1fr);gap:34px;align-items:start;padding:34px 0">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;color:rgba(232,228,218,.45)">2024 — 2025</div>
+    <div style="font-family:'Instrument Serif',serif;font-size:34px;line-height:1.05">Análisis y desarrollo<br><span style="color:#a89f8d">SENA</span></div>
+    <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(232,228,218,.6);text-wrap:pretty">Formación técnica en desarrollo de software: bases de datos, programación orientada a objetos y desarrollo de aplicaciones.</p>
+  </div>
+</section>
+
+<section id="contacto" data-screen-label="Contacto" style="border-top:1px solid rgba(232,228,218,.14);padding:110px 30px 40px">
+  <div style="max-width:1500px;margin:0 auto">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(232,228,218,.4)">06 — Contacto</div>
+    <a data-magnet href="mailto:luissyhaimar1@gmail.com" style="display:block;margin:26px 0 0;font-family:'Instrument Serif',serif;font-size:clamp(30px,7vw,118px);line-height:.94;letter-spacing:-.03em;transition:opacity .3s" style-hover="opacity:.6">luissyhaimar1@gmail.com</a>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:44px">
+      <a data-magnet href="https://github.com/LuissyS77" target="_blank" rel="noopener" style="padding:13px 20px;border:1px solid rgba(232,228,218,.24);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;transition:border-color .3s,transform .3s" style-hover="border-color:rgba(232,228,218,.7);transform:translateY(-3px)">GitHub ↗</a>
+      <a data-magnet href="https://www.linkedin.com/in/luissy-suarez-a6aa06356" target="_blank" rel="noopener" style="padding:13px 20px;border:1px solid rgba(232,228,218,.24);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;transition:border-color .3s,transform .3s" style-hover="border-color:rgba(232,228,218,.7);transform:translateY(-3px)">LinkedIn ↗</a>
+      <a data-magnet href="#" style="padding:13px 20px;border:1px solid rgba(232,228,218,.24);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;transition:border-color .3s,transform .3s" style-hover="border-color:rgba(232,228,218,.7);transform:translateY(-3px)">Descargar CV ↓</a>
+    </div>
+    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-top:90px;padding-top:20px;border-top:1px solid rgba(232,228,218,.1);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(232,228,218,.38)">
+      <span>© 2026 Luissy Yhaimar Angulo Suárez</span><span>Medellín, Colombia</span><span>Hecho con cuidado</span>
+    </div>
+  </div>
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#4d5cff&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#e8e4da&quot;,&quot;#c8ff3d&quot;,&quot;#ff5c2b&quot;,&quot;#4d5cff&quot;],&quot;section&quot;:&quot;Estilo&quot;},&quot;customCursor&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Interacción&quot;}}">
+class Component extends DCLogic {
+  state = { clock: "", rotating: "Desarrollador web & móvil" };
+  words = ["Desarrollador web & móvil", "Vue 3 · React · Expo", "Practicante en Portada Inmobiliaria", "Construyendo con IA"];
+
+  renderVals() {
+    return { clock: this.state.clock, rotating: this.state.rotating, rootRef: (el) => { this.root = el; } };
+  }
+
+  componentDidMount() {
+    this.tick();
+    this.timer = setInterval(() => this.tick(), 30000);
+    let w = 0, i = this.words[0].length, dir = -1;
+    this.typer = setInterval(() => {
+      i += dir;
+      if (i <= 0) { dir = 1; w = (w + 1) % this.words.length; i = 0; }
+      else if (i >= this.words[w].length) { dir = -1; i = this.words[w].length; }
+      this.setState({ rotating: this.words[w].slice(0, i) || "\u00a0" });
+    }, 62);
+    const root = this.root;
+    if (!root) return;
+
+    const acc = this.props.accent || "#e8e4da";
+    if (acc !== "#e8e4da") this.recolor(root, acc);
+
+    // Partículas del hero
+    const stars = root.querySelector("[data-stars]");
+    if (stars && !stars.childElementCount) {
+      for (let i = 0; i < 26; i++) {
+        const d = document.createElement("span");
+        const s = 1 + Math.random() * 2;
+        d.style.cssText = "position:absolute;border-radius:50%;background:#e8e4da;width:" + s + "px;height:" + s + "px;left:" + (Math.random() * 100).toFixed(2) + "%;top:" + (Math.random() * 100).toFixed(2) + "%;animation:twinkle " + (3 + Math.random() * 5).toFixed(1) + "s ease-in-out " + (Math.random() * 4).toFixed(1) + "s infinite";
+        stars.appendChild(d);
+      }
+    }
+
+    // Parallax suave del fondo con el puntero
+    const layers = root.querySelectorAll("#top [aria-hidden='true']");
+    this.onHeroMove = (e) => {
+      const px = e.clientX / window.innerWidth - 0.5;
+      const py = e.clientY / window.innerHeight - 0.5;
+      layers.forEach((l, i) => {
+        const k = (i + 1) * 7;
+        l.style.marginLeft = (-px * k) + "px";
+        l.style.marginTop = (-py * k) + "px";
+      });
+    };
+    if (window.matchMedia("(pointer:fine)").matches) window.addEventListener("mousemove", this.onHeroMove, { passive: true });
+
+    // Hero lines
+    root.querySelectorAll("[data-rise]").forEach((el, i) => {
+      el.style.transition = "transform 1.1s cubic-bezier(.16,1,.3,1)";
+      setTimeout(() => { el.style.transform = "translateY(0)"; }, 120 + i * 130);
+    });
+
+    // Scroll reveals
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        el.style.transition = "opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1)";
+        el.style.opacity = "1";
+        el.style.transform = "translateY(0)";
+        io.unobserve(el);
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
+    root.querySelectorAll("[data-reveal]").forEach((el, i) => { el.style.transitionDelay = (i % 3) * 70 + "ms"; io.observe(el); });
+
+    // Progress bar
+    const bar = root.querySelector("[data-progress]");
+    this.onScroll = () => {
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      if (bar) bar.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + "%";
+    };
+    window.addEventListener("scroll", this.onScroll, { passive: true });
+    this.onScroll();
+
+    // Custom cursor + magnetic hover
+    if (this.props.customCursor !== false && window.matchMedia("(pointer:fine)").matches) {
+      const cur = root.querySelector("[data-cursor]");
+      let x = 0, y = 0, cx = 0, cy = 0;
+      this.onMove = (e) => { x = e.clientX; y = e.clientY; if (cur) cur.style.opacity = "1"; };
+      window.addEventListener("mousemove", this.onMove, { passive: true });
+      const loop = () => {
+        cx += (x - cx) * 0.18; cy += (y - cy) * 0.18;
+        if (cur) cur.style.transform = "translate(" + cx + "px," + cy + "px)";
+        this.raf = requestAnimationFrame(loop);
+      };
+      loop();
+      root.querySelectorAll("[data-magnet]").forEach((el) => {
+        el.addEventListener("mouseenter", () => { if (cur) { cur.style.width = "72px"; cur.style.height = "72px"; cur.style.margin = "-36px 0 0 -36px"; cur.style.background = "rgba(232,228,218,.12)"; } });
+        el.addEventListener("mouseleave", () => { if (cur) { cur.style.width = "38px"; cur.style.height = "38px"; cur.style.margin = "-19px 0 0 -19px"; cur.style.background = "transparent"; } });
+      });
+    }
+
+    // Parallax tilt on project media
+    root.querySelectorAll("[data-tilt]").forEach((el) => {
+      el.addEventListener("mousemove", (e) => {
+        const r = el.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width - 0.5;
+        const py = (e.clientY - r.top) / r.height - 0.5;
+        el.style.transform = "perspective(900px) rotateY(" + px * 6 + "deg) rotateX(" + -py * 6 + "deg) scale(1.015)";
+      });
+      el.addEventListener("mouseleave", () => { el.style.transform = "none"; });
+    });
+  }
+
+  recolor(root, acc) {
+    root.querySelectorAll("*").forEach((el) => {
+      const s = el.getAttribute("style") || "";
+      if (s.includes("#e8e4da")) el.setAttribute("style", s.split("#e8e4da").join(acc));
+    });
+  }
+
+  tick() {
+    const t = new Date().toLocaleTimeString("es-CO", { timeZone: "America/Bogota", hour: "2-digit", minute: "2-digit", hour12: false });
+    this.setState({ clock: t });
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timer);
+    clearInterval(this.typer);
+    cancelAnimationFrame(this.raf);
+    window.removeEventListener("scroll", this.onScroll);
+    window.removeEventListener("mousemove", this.onMove);
+    window.removeEventListener("mousemove", this.onHeroMove);
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+---
+import PlaceholderFrame from "../ui/PlaceholderFrame.astro";
+import { aboutStats } from "../../data/site";
+---
+
+<section id="sobre" class="about">
+  <div class="about__photo" data-reveal>
+    <div class="about__label">02 — Sobre mí</div>
+    <div class="about__photo-frame">
+      <PlaceholderFrame aspectRatio="4/5" alt="foto de retrato" />
+    </div>
+  </div>
+
+  <div>
+    <p class="about__lede" data-reveal>
+      Técnico en desarrollo de software del SENA. Construí <strong>Conv3rTech</strong> en
+      equipo —web y móvil— y hoy hago prácticas en <strong>Portada Inmobiliaria</strong>, donde
+      acumulo 6 meses de experiencia en producto real. Cada vez integro más <strong>IA</strong>
+      en mi forma de trabajar.
+    </p>
+    <p class="about__quote" data-reveal>
+      Vengo del SENA, aprendí construyendo en equipo y me quedé con una obsesión: que lo que se
+      entrega <em>se sienta terminado</em>.
+    </p>
+    <div class="about__paragraphs">
+      <p data-reveal>
+        En Portada Inmobiliaria toco código que usan personas todos los días: listados, filtros y
+        formularios donde cada detalle de rendimiento se nota.
+      </p>
+      <p data-reveal>
+        Trabajo en el cruce entre front-end y producto: paso de un flujo en Figma a componentes
+        reales, con estados de carga, error y vacío pensados desde el principio.
+      </p>
+      <p data-reveal>
+        También he ido incorporando la IA a mi día a día —como copiloto para explorar soluciones,
+        revisar código y acelerar iteraciones— sin dejar de entender lo que entrego.
+      </p>
+    </div>
+    <div class="about__stats">
+      {aboutStats.map((stat) => (
+        <div data-reveal>
+          <div class="about__stat-value">{stat.valor}</div>
+          <div class="about__stat-label">{stat.label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    padding: 130px 30px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+    gap: 70px;
+    align-items: start;
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+  .about__photo {
+    opacity: 0;
+    transform: translateY(24px);
+    position: sticky;
+    top: 110px;
+  }
+  .about__label {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(var(--fg-rgb), 0.4);
+    margin-bottom: 22px;
+  }
+  .about__photo-frame {
+    margin-top: 0;
+  }
+
+  .about__lede {
+    margin: 0 0 26px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(var(--fg-rgb), 0.66);
+    text-wrap: pretty;
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  .about__lede strong {
+    font-weight: 500;
+    color: var(--fg);
+  }
+
+  .about__quote {
+    margin: 0 0 34px;
+    font-family: var(--font-serif);
+    font-size: clamp(30px, 3.6vw, 54px);
+    line-height: 1.16;
+    letter-spacing: -0.015em;
+    text-wrap: pretty;
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  .about__quote em {
+    color: var(--accent-italic);
+  }
+
+  .about__paragraphs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 34px;
+    border-top: 1px solid rgba(var(--fg-rgb), 0.12);
+    padding-top: 30px;
+  }
+  .about__paragraphs p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(var(--fg-rgb), 0.62);
+    text-wrap: pretty;
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  .about__stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 44px;
+    margin-top: 56px;
+    border-top: 1px solid rgba(var(--fg-rgb), 0.12);
+    padding-top: 26px;
+  }
+  .about__stats > div {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  .about__stat-value {
+    font-family: var(--font-serif);
+    font-size: 56px;
+    line-height: 1;
+  }
+  .about__stat-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(var(--fg-rgb), 0.42);
+  }
+</style>

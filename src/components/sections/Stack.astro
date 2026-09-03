@@ -1,0 +1,30 @@
+---
+import SectionHeader from "../ui/SectionHeader.astro";
+import StackGroup from "../ui/StackGroup.astro";
+import { stack } from "../../data/stack";
+---
+
+<section id="stack" class="stack">
+  <div class="stack__header">
+    <SectionHeader numero="04" nombre="Stack" subtitulo="Herramientas del día a día" />
+  </div>
+  <div class="stack__grid">
+    {stack.map((categoria) => <StackGroup categoria={categoria.categoria} items={categoria.items} />)}
+  </div>
+</section>
+
+<style>
+  .stack {
+    padding: 90px 30px 120px;
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+  .stack__header {
+    margin-bottom: 44px;
+  }
+  .stack__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 44px;
+  }
+</style>

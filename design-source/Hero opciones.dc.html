@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#141412;color:#e8e4da;font-family:"Space Grotesk",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#e8e4da;text-decoration:none}
+a:hover{color:#a89f8d}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+@keyframes scrollcue{0%{transform:translateY(-100%)}100%{transform:translateY(100%)}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes caret{0%,100%{opacity:1}50%{opacity:0}}
+</style>
+</helmet>
+
+<section ref="{{ rootRef }}" style="padding:56px;display:flex;flex-direction:column;gap:56px">
+  <div style="display:flex;align-items:baseline;gap:16px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(232,228,218,.45)">
+    <span style="color:#e8e4da">Turno 1</span><span>Cuatro direcciones para el hero</span>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:48px">
+
+    <div id="1a" style="flex:0 0 1280px;width:1280px;max-width:1280px">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+        <span style="padding:5px 11px;border-radius:100px;background:#e8e4da;color:#0c0c0b;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em">1a</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(232,228,218,.5)">Actual — Editorial serif</span>
+      </div>
+      <div style="height:760px;background:#0c0c0b;border:1px solid rgba(232,228,218,.12);display:flex;flex-direction:column;justify-content:space-between;padding:44px 40px 26px;overflow:hidden">
+        <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(232,228,218,.45)">
+          <span>Luissy Yhaimar Angulo Suárez</span><span>Medellín, CO · 16:52</span><span>Dev web &amp; móvil · Disponible 2026</span>
+        </div>
+        <div>
+          <h1 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:172px;line-height:1;letter-spacing:-.03em">
+            <span style="display:block">Diseño</span>
+            <span style="display:block">interfaces <em style="font-style:italic;color:#a89f8d">que</em></span>
+            <span style="display:block">funcionan.</span>
+          </h1>
+          <div style="display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end;margin-top:36px;border-top:1px solid rgba(232,228,218,.12);padding-top:18px">
+            <p style="margin:0;max-width:46ch;font-size:15px;line-height:1.55;color:rgba(232,228,218,.62);text-wrap:pretty">Técnico en desarrollo de software del SENA. Construí Conv3rTech en equipo —web y móvil— y hoy hago prácticas en Portada Inmobiliaria.</p>
+            <div style="display:flex;gap:10px">
+              <span style="padding:13px 21px;border-radius:100px;background:#e8e4da;color:#0c0c0b;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap">Ver proyectos →</span>
+              <span style="padding:13px 21px;border-radius:100px;border:1px solid rgba(232,228,218,.25);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap">Contacto</span>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(232,228,218,.4)">
+          <span style="display:flex;align-items:center;gap:12px"><span style="display:block;width:1px;height:40px;overflow:hidden;background:rgba(232,228,218,.15);position:relative"><span style="position:absolute;inset:0;background:#e8e4da;animation:scrollcue 2s cubic-bezier(.7,0,.3,1) infinite"></span></span>Desplázate</span>
+          <span>01 — 06</span>
+        </div>
+      </div>
+      <p style="margin:14px 0 0;font-size:13.5px;line-height:1.55;color:rgba(232,228,218,.5);max-width:70ch">Lo que ya tienes: titular serif enorme, información en las esquinas, dos botones. Elegante y sobrio.</p>
+    </div>
+
+    <div id="1b" style="flex:0 0 1280px;width:1280px;max-width:1280px">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+        <span style="padding:5px 11px;border-radius:100px;background:#e8e4da;color:#0c0c0b;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em">1b</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(232,228,218,.5)">Declaración en primera persona</span>
+      </div>
+      <div style="height:760px;background:#0c0c0b;border:1px solid rgba(232,228,218,.12);display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:0;overflow:hidden">
+        <div style="padding:56px 40px;display:flex;flex-direction:column;justify-content:space-between">
+          <div style="display:flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(232,228,218,.5)"><span style="width:8px;height:8px;border-radius:50%;background:#7fdc8a;animation:blink 2.6s infinite"></span>Abierto a oportunidades · Medellín</div>
+          <div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,228,218,.45);margin-bottom:22px">Luissy Yhaimar Angulo Suárez</div>
+            <h1 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:96px;line-height:1.06;letter-spacing:-.02em;max-width:15ch">Construyo <em style="font-style:italic;color:#a89f8d">web y móvil</em> para producto real, con la IA como copiloto.</h1>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:34px;border-top:1px solid rgba(232,228,218,.12);padding-top:22px">
+            <div><div style="font-family:'Instrument Serif',serif;font-size:44px;line-height:1">6</div><div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(232,228,218,.42)">meses en producción</div></div>
+            <div><div style="font-family:'Instrument Serif',serif;font-size:44px;line-height:1">2</div><div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(232,228,218,.42)">plataformas</div></div>
+            <div><div style="font-family:'Instrument Serif',serif;font-size:44px;line-height:1">Vue · React</div><div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(232,228,218,.42)">día a día</div></div>
+          </div>
+        </div>
+        <div style="border-left:1px solid rgba(232,228,218,.12);display:flex;flex-direction:column">
+          <div style="flex:1;background-image:repeating-linear-gradient(115deg,rgba(232,228,218,.07) 0 1px,transparent 1px 9px);display:flex;align-items:flex-end;padding:16px"><span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(232,228,218,.45)">[ retrato ]</span></div>
+          <div style="padding:22px 20px;border-top:1px solid rgba(232,228,218,.12);display:flex;flex-direction:column;gap:12px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase">
+            <span style="color:rgba(232,228,218,.45)">Encuéntrame</span>
+            <span>GitHub ↗</span><span>LinkedIn ↗</span><span>Correo ↗</span>
+          </div>
+        </div>
+      </div>
+      <p style="margin:14px 0 0;font-size:13.5px;line-height:1.55;color:rgba(232,228,218,.5);max-width:70ch">Dice quién eres y qué haces desde el primer segundo. Tu foto está arriba y las cifras suben al hero. El más directo para reclutadores.</p>
+    </div>
+
+    <div id="1c" style="flex:0 0 1280px;width:1280px;max-width:1280px">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+        <span style="padding:5px 11px;border-radius:100px;background:#e8e4da;color:#0c0c0b;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em">1c</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(232,228,218,.5)">Nombre gigante + rol que rota</span>
+      </div>
+      <div style="height:760px;background:#0c0c0b;border:1px solid rgba(232,228,218,.12);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:34px;padding:40px;overflow:hidden;position:relative">
+        <div style="position:absolute;top:0;left:0;right:0;padding:20px 30px;display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(232,228,218,.4)"><span>Portafolio 2026</span><span>Medellín, Colombia</span></div>
+        <div style="text-align:center">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(232,228,218,.45);margin-bottom:20px">Hola, soy</div>
+          <h1 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:150px;line-height:.92;letter-spacing:-.035em">Luissy<br><em style="font-style:italic;color:#a89f8d">Angulo</em></h1>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;font-family:'JetBrains Mono',monospace;font-size:17px;letter-spacing:.08em;color:rgba(232,228,218,.72);border:1px solid rgba(232,228,218,.16);border-radius:100px;padding:13px 26px">
+          <span style="color:rgba(232,228,218,.4)">&gt;</span><span>{{ rotating }}</span><span style="width:9px;height:19px;background:#e8e4da;animation:caret 1s steps(1) infinite"></span>
+        </div>
+        <div style="position:absolute;bottom:0;left:0;right:0;border-top:1px solid rgba(232,228,218,.1);padding:14px 0;overflow:hidden;white-space:nowrap">
+          <div style="display:inline-flex;gap:30px;animation:marq 26s linear infinite;font-family:'Instrument Serif',serif;font-size:28px;color:rgba(232,228,218,.26)">
+            <span>Vue 3</span><span>·</span><span>React</span><span>·</span><span>Expo</span><span>·</span><span>Node</span><span>·</span><span>PHP</span><span>·</span><span>MySQL</span><span>·</span><span>Docker</span><span>·</span>
+            <span>Vue 3</span><span>·</span><span>React</span><span>·</span><span>Expo</span><span>·</span><span>Node</span><span>·</span><span>PHP</span><span>·</span><span>MySQL</span><span>·</span><span>Docker</span><span>·</span>
+          </div>
+        </div>
+      </div>
+      <p style="margin:14px 0 0;font-size:13.5px;line-height:1.55;color:rgba(232,228,218,.5);max-width:70ch">Tu nombre es el titular, centrado, y debajo un rol que se escribe solo. Memorable y con personalidad; menos "agencia", más tú.</p>
+    </div>
+
+    <div id="1d" style="flex:0 0 1280px;width:1280px;max-width:1280px">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+        <span style="padding:5px 11px;border-radius:100px;background:#e8e4da;color:#0c0c0b;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em">1d</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(232,228,218,.5)">Índice — el trabajo primero</span>
+      </div>
+      <div style="height:760px;background:#0c0c0b;border:1px solid rgba(232,228,218,.12);display:flex;flex-direction:column;padding:40px;overflow:hidden">
+        <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(232,228,218,.45)">
+          <span>Luissy Yhaimar Angulo Suárez</span><span>Desarrollo web &amp; móvil</span><span>Medellín, CO</span>
+        </div>
+        <div style="margin:auto 0;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
+          <div>
+            <h1 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:74px;line-height:1.04;letter-spacing:-.02em">Interfaces que la gente <em style="font-style:italic;color:#a89f8d">usa todos los días.</em></h1>
+            <p style="margin:22px 0 0;max-width:40ch;font-size:15px;line-height:1.6;color:rgba(232,228,218,.6)">Del SENA a producto en producción. Web, móvil y una obsesión por el detalle que se nota al usarlo.</p>
+          </div>
+          <div style="display:flex;flex-direction:column">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;padding:18px 0;border-top:1px solid rgba(232,228,218,.14)">
+              <span style="font-family:'Instrument Serif',serif;font-size:38px">Conv3rTech</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(232,228,218,.45)">React · Expo · Node — 2025</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;padding:18px 0;border-top:1px solid rgba(232,228,218,.14)">
+              <span style="font-family:'Instrument Serif',serif;font-size:38px">Portada Inmobiliaria</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(232,228,218,.45)">Vue 3 · PHP — 2026</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;padding:18px 0;border-top:1px solid rgba(232,228,218,.14);border-bottom:1px solid rgba(232,228,218,.14);color:rgba(232,228,218,.5)">
+              <span style="font-family:'Instrument Serif',serif;font-size:38px">Más trabajo</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase">GitHub ↗</span>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(232,228,218,.4)">
+          <span style="display:flex;align-items:center;gap:12px"><span style="display:block;width:1px;height:40px;overflow:hidden;background:rgba(232,228,218,.15);position:relative"><span style="position:absolute;inset:0;background:#e8e4da;animation:scrollcue 2s cubic-bezier(.7,0,.3,1) infinite"></span></span>Desplázate</span>
+          <span>luissyhaimar1@gmail.com</span>
+        </div>
+      </div>
+      <p style="margin:14px 0 0;font-size:13.5px;line-height:1.55;color:rgba(232,228,218,.5);max-width:70ch">Los proyectos se ven sin scroll: el hero es mitad frase, mitad índice clicable. El que mejor funciona si quieren evaluar tu trabajo rápido.</p>
+    </div>
+
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { rotating: "Desarrollador web & móvil" };
+  words = ["Desarrollador web & móvil", "Vue 3 · React · Expo", "Practicante en Portada Inmobiliaria", "Construyendo con IA"];
+
+  renderVals() {
+    return { rotating: this.state.rotating, rootRef: (el) => { this.root = el; } };
+  }
+
+  componentDidMount() {
+    let w = 0, i = this.words[0].length, dir = -1;
+    this.timer = setInterval(() => {
+      const full = this.words[w];
+      i += dir;
+      if (i <= 0) { dir = 1; w = (w + 1) % this.words.length; i = 0; }
+      else if (i >= this.words[w].length) { dir = -1; i = this.words[w].length; }
+      this.setState({ rotating: this.words[w].slice(0, i) || "\u00a0" });
+    }, 62);
+  }
+
+  componentWillUnmount() { clearInterval(this.timer); }
+}
+</script>
+</body>
+</html>

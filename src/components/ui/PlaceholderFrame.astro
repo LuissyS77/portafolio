@@ -1,0 +1,19 @@
+---
+interface Props {
+  aspectRatio: string;
+  alt: string;
+  tilt?: boolean;
+}
+
+const { aspectRatio, alt, tilt = false } = Astro.props;
+---
+
+<div class="placeholder-frame" style={`aspect-ratio:${aspectRatio}`} data-tilt={tilt ? "" : undefined}>
+  <span class="placeholder-frame__label">[ {alt} ]</span>
+</div>
+
+<style>
+  .placeholder-frame[data-tilt] {
+    transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+</style>

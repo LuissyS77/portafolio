@@ -1,0 +1,18 @@
+---
+import SectionHeader from "../ui/SectionHeader.astro";
+import ProjectCard from "../ui/ProjectCard.astro";
+import { proyectos } from "../../data/proyectos";
+---
+
+<section id="proyectos" class="projects">
+  <SectionHeader numero="03" nombre="Proyectos" subtitulo="Seleccionados" />
+  {proyectos.map((proyecto, index) => <ProjectCard proyecto={proyecto} index={index} />)}
+</section>
+
+<style>
+  .projects {
+    padding: 20px 30px 60px;
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+</style>

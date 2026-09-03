@@ -1,0 +1,53 @@
+---
+interface Props {
+  periodo: string;
+  rol: string;
+  lugar: string;
+  descripcion: string;
+}
+
+const { periodo, rol, lugar, descripcion } = Astro.props;
+---
+
+<div class="timeline-item" data-reveal>
+  <div class="timeline-item__periodo">{periodo}</div>
+  <div class="timeline-item__rol">{rol}<br /><span class="timeline-item__lugar">{lugar}</span></div>
+  <p class="timeline-item__desc">{descripcion}</p>
+</div>
+
+<style>
+  .timeline-item {
+    opacity: 0;
+    transform: translateY(22px);
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr) minmax(0, 1fr);
+    gap: 34px;
+    align-items: start;
+    padding: 34px 0;
+    border-bottom: 1px solid rgba(var(--fg-rgb), 0.1);
+  }
+  .timeline-item:last-child {
+    border-bottom: none;
+  }
+  .timeline-item__periodo {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: rgba(var(--fg-rgb), 0.45);
+  }
+  .timeline-item__rol {
+    font-family: var(--font-serif);
+    font-size: 34px;
+    line-height: 1.05;
+  }
+  .timeline-item__lugar {
+    color: var(--accent-italic);
+  }
+  .timeline-item__desc {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(var(--fg-rgb), 0.6);
+    text-wrap: pretty;
+  }
+</style>

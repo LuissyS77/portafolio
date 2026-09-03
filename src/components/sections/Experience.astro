@@ -1,0 +1,18 @@
+---
+import SectionHeader from "../ui/SectionHeader.astro";
+import TimelineItem from "../ui/TimelineItem.astro";
+import { experiencia } from "../../data/experiencia";
+---
+
+<section id="experiencia" class="experience">
+  <SectionHeader numero="05" nombre="Experiencia" subtitulo="Formación & trabajo" />
+  {experiencia.map((item) => <TimelineItem {...item} />)}
+</section>
+
+<style>
+  .experience {
+    padding: 0 30px 130px;
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+</style>

@@ -1,0 +1,22 @@
+---
+interface Props {
+  href: string;
+  variant?: "fill" | "outline" | "social";
+  magnet?: boolean;
+  external?: boolean;
+}
+
+const { href, variant = "outline", magnet = true, external = false } = Astro.props;
+
+const classes = ["btn-pill", `btn-pill--${variant}`].join(" ");
+---
+
+<a
+  href={href}
+  class={classes}
+  data-magnet={magnet ? "" : undefined}
+  target={external ? "_blank" : undefined}
+  rel={external ? "noopener" : undefined}
+>
+  <slot />
+</a>
