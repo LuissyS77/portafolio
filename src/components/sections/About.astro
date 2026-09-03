@@ -1,21 +1,21 @@
 ---
 import PlaceholderFrame from "../ui/PlaceholderFrame.astro";
-import { aboutStats } from "../../data/site";
+import { aboutStats, site } from "../../data/site";
 ---
 
 <section id="sobre" class="about">
   <div class="about__photo" data-reveal>
     <div class="about__label">02 — Sobre mí</div>
     <div class="about__photo-frame">
-      <PlaceholderFrame aspectRatio="4/5" alt="foto de retrato" />
+      <PlaceholderFrame aspectRatio="4/5" alt="foto de retrato" src={site.fotoUrl || undefined} />
     </div>
   </div>
 
   <div>
     <p class="about__lede" data-reveal>
-      Técnico en desarrollo de software del SENA. Construí <strong>Conv3rTech</strong> en
-      equipo —web y móvil— y hoy hago prácticas en <strong>Portada Inmobiliaria</strong>, donde
-      acumulo 6 meses de experiencia en producto real. Cada vez integro más <strong>IA</strong>
+      Técnico en análisis desarrollo de software del SENA. Construí <strong>Conv3rTech</strong> en
+      equipo —web y móvil— e hice prácticas en <strong>Portada Inmobiliaria</strong>, donde
+      acumulo 6 meses de experiencia en producto real. Cada vez integro más <strong>IA </strong>
       en mi forma de trabajar.
     </p>
     <p class="about__quote" data-reveal>
@@ -28,8 +28,8 @@ import { aboutStats } from "../../data/site";
         formularios donde cada detalle de rendimiento se nota.
       </p>
       <p data-reveal>
-        Trabajo en el cruce entre front-end y producto: paso de un flujo en Figma a componentes
-        reales, con estados de carga, error y vacío pensados desde el principio.
+        Trabajo en el cruce entre front-end y producto: convierto requisitos y mockups en
+        componentes reales, con estados de carga, error y vacío pensados desde el principio.
       </p>
       <p data-reveal>
         También he ido incorporando la IA a mi día a día —como copiloto para explorar soluciones,
@@ -143,5 +143,18 @@ import { aboutStats } from "../../data/site";
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: rgba(var(--fg-rgb), 0.42);
+  }
+
+  /* Sin este breakpoint, las 2 columnas fijas quedan de ~150px en celular:
+     foto y texto ilegibles apretados uno al lado del otro. */
+  @media (max-width: 760px) {
+    .about {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      padding: 90px 24px;
+    }
+    .about__photo {
+      position: static;
+    }
   }
 </style>

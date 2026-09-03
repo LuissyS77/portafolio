@@ -35,7 +35,7 @@ const lineas = Array.isArray(proyecto.titulo) ? proyecto.titulo : [proyecto.titu
     </a>
   </div>
   <div class="project-card__media">
-    <PlaceholderFrame aspectRatio="16/11" alt={proyecto.imagenAlt} tilt />
+    <PlaceholderFrame aspectRatio="16/11" alt={proyecto.imagenAlt} src={proyecto.imagenUrl} fit="contain" tilt />
   </div>
 </article>
 
@@ -116,5 +116,18 @@ const lineas = Array.isArray(proyecto.titulo) ? proyecto.titulo : [proyecto.titu
     white-space: nowrap;
     border-bottom: 1px solid rgba(var(--fg-rgb), 0.3);
     padding-bottom: 6px;
+  }
+
+  /* Las 2 columnas fijas (imagen + texto) se apretujan en celular; se apilan
+     en 1 columna, conservando el orden imagen/texto que tenía cada variante. */
+  @media (max-width: 760px) {
+    .project-card {
+      padding: 54px 0;
+      gap: 32px;
+    }
+    .project-card--derecha,
+    .project-card--izquierda {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

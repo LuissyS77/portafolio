@@ -17,6 +17,6 @@ export const stack: HerramientaCategoria[] = [
   },
   {
     categoria: "Proceso",
-    items: ["Git / GitHub", "Vite", "Figma", "Scrum", "Code review", "Astro", "Docker", "Despliegues"],
+    items: ["Git / GitHub", "Vite", "Scrum", "Code review", "Astro", "Docker", "Despliegues"],
   },
 ];

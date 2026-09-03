@@ -1,7 +1,7 @@
 export function initHeroParallax(): void {
   if (!window.matchMedia("(pointer:fine)").matches) return;
 
-  const layers = document.querySelectorAll<HTMLElement>("#top [aria-hidden='true']");
+  const layers = document.querySelectorAll<HTMLElement>("#top [data-parallax]");
   if (!layers.length) return;
 
   window.addEventListener(

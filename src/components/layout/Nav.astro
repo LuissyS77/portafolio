@@ -54,4 +54,19 @@ import { navLinks, site } from "../../data/site";
   .nav__contact {
     color: var(--accent-italic);
   }
+
+  /* El diseño original no define breakpoints (todo depende de clamp()/auto-fit),
+     pero 5 links + logo en una sola fila desbordan cualquier viewport de celular. */
+  @media (max-width: 640px) {
+    .nav {
+      flex-wrap: wrap;
+      row-gap: 10px;
+      padding: 14px 20px;
+    }
+    .nav__links {
+      gap: 12px 16px;
+      flex-wrap: wrap;
+      font-size: 9.5px;
+    }
+  }
 </style>

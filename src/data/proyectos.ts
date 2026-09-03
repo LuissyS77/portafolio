@@ -15,10 +15,11 @@ export const proyectos: Proyecto[] = [
     linkTexto: "Ver repositorio",
     imagenAlt: "captura de Conv3rTech — web + app",
     imagenPosicion: "derecha",
+    imagenUrl: "https://res.cloudinary.com/inwvrzem/image/upload/v1788466710/unnamed.png",
   },
   {
     numero: "02",
-    categoria: "Prácticas · Actual",
+    categoria: "Prácticas · 2026",
     titulo: ["Portada", "Inmobiliaria"],
     descripcion:
       "Portal inmobiliario en producción. Trabajo sobre el front en Vue 3 + Vite con Bootstrap 5 y Vue Router: vistas y buscador de propiedades, paginación y autocompletado, consumiendo la API en PHP. Equipo con commits convencionales, pruebas en Vitest y despliegues a producción.",
@@ -27,5 +28,6 @@ export const proyectos: Proyecto[] = [
     linkTexto: "Ver organización",
     imagenAlt: "captura de Portada Inmobiliaria",
     imagenPosicion: "izquierda",
+    imagenUrl: "https://res.cloudinary.com/inwvrzem/image/upload/v1788468541/Captura_de_pantalla_2026-09-03_154804.png",
   },
 ];

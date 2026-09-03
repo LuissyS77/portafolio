@@ -11,6 +11,8 @@ export const site = {
   linkedin: "https://www.linkedin.com/in/luissy-suarez-a6aa06356",
   // Coloca tu PDF en public/cv.pdf (mismo nombre) para que este botón funcione.
   cvHref: "/cv.pdf",
+  // Pega aquí la URL de Cloudinary de tu foto. Vacío = se muestra el marco rayado.
+  fotoUrl: "https://res.cloudinary.com/inwvrzem/image/upload/v1788466378/IMG_4307_Original.jpg",
   disponible: true,
   anioCopyright: 2026,
 };
@@ -19,7 +21,7 @@ export const site = {
 export const heroWords: string[] = [
   "Desarrollador web & móvil",
   "Vue 3 · React · Expo",
-  "Practicante en Portada Inmobiliaria",
+  "6 meses en Portada Inmobiliaria",
   "Construyendo con IA",
 ];
 

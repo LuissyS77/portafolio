@@ -4,7 +4,7 @@ import type { ExperienciaItem } from "../types/content";
 // Para agregar una entrada nueva, insértala donde deba aparecer.
 export const experiencia: ExperienciaItem[] = [
   {
-    periodo: "2026 — Hoy",
+    periodo: "2026",
     rol: "Practicante de desarrollo",
     lugar: "Portada Inmobiliaria",
     descripcion:

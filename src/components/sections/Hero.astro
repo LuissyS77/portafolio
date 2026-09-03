@@ -4,11 +4,11 @@ import { site } from "../../data/site";
 ---
 
 <header id="top" class="hero">
-  <div class="hero__grid" aria-hidden="true"></div>
-  <div class="hero__blob hero__blob--a" aria-hidden="true"></div>
-  <div class="hero__blob hero__blob--b" aria-hidden="true"></div>
-  <div class="hero__stars" data-stars aria-hidden="true"></div>
-  <div class="hero__vignette" aria-hidden="true"></div>
+  <div class="hero__grid" data-parallax aria-hidden="true"></div>
+  <div class="hero__blob hero__blob--a" data-parallax aria-hidden="true"></div>
+  <div class="hero__blob hero__blob--b" data-parallax aria-hidden="true"></div>
+  <div class="hero__stars" data-stars data-parallax aria-hidden="true"></div>
+  <div class="hero__vignette" data-parallax aria-hidden="true"></div>
 
   <div class="hero__topline">
     <span>Portafolio {site.anioCopyright}</span>
@@ -254,5 +254,21 @@ import { site } from "../../data/site";
     inset: 0;
     background: var(--fg);
     animation: scrollcue 2s cubic-bezier(0.7, 0, 0.3, 1) infinite;
+  }
+
+  /* Los 3 bloques de .hero__topline (fecha · ubicación/reloj · rol) no caben en
+     una sola fila en celular; el hero los recortaría con overflow:hidden. */
+  @media (max-width: 480px) {
+    .hero {
+      padding: 76px 20px 20px;
+    }
+    .hero__topline {
+      flex-wrap: wrap;
+      row-gap: 6px;
+      font-size: 9px;
+    }
+    .hero__topline-right {
+      text-align: left;
+    }
   }
 </style>

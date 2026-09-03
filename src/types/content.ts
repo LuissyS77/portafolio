@@ -10,6 +10,8 @@ export interface Proyecto {
   imagenAlt: string;
   /** Si se omite, el layout alterna automáticamente según la posición en el array. */
   imagenPosicion?: "izquierda" | "derecha";
+  /** URL de Cloudinary de la captura. Sin este campo se muestra el marco rayado. */
+  imagenUrl?: string;
 }
 
 export interface HerramientaCategoria {

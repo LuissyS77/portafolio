@@ -50,4 +50,13 @@ const { periodo, rol, lugar, descripcion } = Astro.props;
     color: rgba(var(--fg-rgb), 0.6);
     text-wrap: pretty;
   }
+
+  /* 150px + 2 columnas flexibles deja ~35px por columna en celular. Se apila. */
+  @media (max-width: 640px) {
+    .timeline-item {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      padding: 26px 0;
+    }
+  }
 </style>

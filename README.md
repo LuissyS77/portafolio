@@ -56,11 +56,24 @@ en el orden en que quieras que aparezca — no se ordena por fecha automáticame
 Coloca tu PDF en `public/cv.pdf` (mismo nombre exacto). El botón "Descargar CV" ya apunta
 ahí (`src/data/site.ts` → `cvHref`) — empieza a funcionar en el siguiente build sin tocar código.
 
-## Reemplazar los placeholders por capturas reales
+## Reemplazar los placeholders por capturas reales (Cloudinary)
 
 Las secciones "Sobre mí" y "Proyectos" usan `PlaceholderFrame.astro` (marco rayado con texto
-`[ ... ]`) mientras no hay imágenes reales. Cuando tengas las capturas, se reemplaza ese
-componente por un `<img>` dentro de cada sección.
+`[ ... ]`) mientras no hay imágenes reales. El componente ya sabe mostrar una imagen real en
+vez del marco rayado — solo hay que pegar la URL:
+
+1. Sube la imagen a Cloudinary y copia su URL (la que empieza con
+   `https://res.cloudinary.com/...`).
+2. Para tu foto: pégala en `fotoUrl` dentro de `src/data/site.ts`.
+3. Para la captura de un proyecto: pégala en el campo `imagenUrl` de ese proyecto, dentro de
+   `src/data/proyectos.ts`.
+4. Guarda. Mientras el campo esté vacío (`""`) se sigue viendo el marco rayado — no hay que
+   tocar ningún componente, y puedes ir subiendo las capturas de a una.
+
+No hace falta configurar nada de Astro para esto: Cloudinary ya sirve las imágenes optimizadas
+y por CDN, así que el sitio simplemente las carga con un `<img>` normal (con `loading="lazy"`).
+Si quieres redimensionar o comprimir distinto, se ajusta directo en la URL de Cloudinary
+(por ejemplo agregando `w_800,q_auto,f_auto` a la transformación) antes de pegarla.
 
 ## Publicar en Vercel
 
