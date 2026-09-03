@@ -9,16 +9,6 @@ el flujo de trabajo.
   typewriter, cursor personalizado, tilt 3D y barra de progreso.
 - **Tipografía:** Instrument Serif, Space Grotesk, JetBrains Mono — self-hosted en `public/fonts`.
 
-## Comandos
-
-| Comando           | Qué hace                                    |
-| ------------------ | -------------------------------------------- |
-| `npm install`       | Instala dependencias                          |
-| `npm run dev`       | Levanta el servidor de desarrollo             |
-| `npm run build`     | Genera el sitio estático en `dist/`           |
-| `npm run preview`   | Sirve el build de producción localmente       |
-| `npx astro check`   | Revisa tipos y errores en los `.astro`        |
-
 ## Estructura
 
 ```
