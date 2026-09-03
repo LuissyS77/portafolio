@@ -12,7 +12,7 @@ export const site = {
   // Coloca tu PDF en public/cv.pdf (mismo nombre) para que este botón funcione.
   cvHref: "/cv.pdf",
   // Pega aquí la URL de Cloudinary de tu foto. Vacío = se muestra el marco rayado.
-  fotoUrl: "https://res.cloudinary.com/inwvrzem/image/upload/v1788466378/IMG_4307_Original.jpg",
+  fotoUrl: "https://res.cloudinary.com/inwvrzem/image/upload/v1788471245/IMG_4307_Original.jpg",
   disponible: true,
   anioCopyright: 2026,
 };
